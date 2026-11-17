@@ -1,0 +1,25 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/shopsphere
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  data:
+    redis:
+      host: localhost
+      port: 6379
+  cache:
+    type: redis
+    redis:
+      time-to-live: 10m
+app:
+  jwt:
+    secret: change-me-to-a-long-random-secret-at-least-32-bytes!!
+    expiration-ms: 86400000
+  cors:
+    allowed-origin: http://localhost:5173
